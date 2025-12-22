@@ -1,0 +1,121 @@
+/*============================================================
+                        
+                        AO3 Site Skin:
+                    Color-Coded Tag Boxes
+
+                        by ZerafinaCSS
+
+=============================================================*/
+
+
+/*>========== reset some of the default tag styling ==========<*/
+
+.commas li:has(a.tag, a[data-remote="true"]), /* a[data-remote="true"] = hidden warnings/additional tags (can be set in preferences) */
+.commas li a.tag {
+  margin: unset;
+  padding: unset;
+  border: unset;
+  line-height: 1.286;
+  font-size: 100%; /* change tag font size here */
+}
+
+/* this removes the comma between tags */
+.commas li::after {
+  content: none;
+}
+
+/*>========== new tag styling ==========<*/
+
+/* tag layout */
+.commas:has(a.tag, a[data-remote="true"]) {
+  display: inline-flex;
+  flex-wrap: wrap;
+  column-gap: 5px; /* width of gap between neighbouring tags */
+  align-items: center;
+}
+
+/* fix tag pages */
+.tag.home .listbox .tags.commas {
+  width: 100%;
+}
+
+/* change shape and border style for all tags here */
+/* + colors for tags that aren't any specific tag type (see below) */
+.commas li a.tag,
+.tags a[data-remote="true"] {
+  display: inline-block;
+  margin-block: 2.5px; /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of December 2025) */
+  padding: 0.1em 0.5em; /* inner space for tag boxes */
+  border: 1px solid #666; /* change border-width, style and color here; replace this line with "border: none" or delete it to remove the borders */
+  border-radius: 12px; /* rounded corners; change value to "0" to remove them */
+  background-color: #DDD;
+  color: #111; /* text color */
+}
+
+/*>========== colors for individual tag types ==========<*/
+/* this overrides the colors specified above */
+
+/* below are the tags that appear in blurbs and work meta boxes (some also in tag pages) */
+
+/* warnings */
+div:has(.commas) [class^="warning"] a.tag,
+.tags .warnings a[data-remote="true"] {
+  border-color: #900;
+  background-color: #F5D5D5;
+  color: #111; /* text color */
+}
+
+/* relationships */
+div:has(.commas) [class^="relationship"] a.tag {
+  border-color: #994D00;
+  background-color: #FFD9B2;
+  color: #111; /* text color */
+}
+
+/* characters */
+div:has(.commas) [class^="character"] a.tag {
+  border-color: #998500;
+  background-color: #FFF4AB;
+  color: #111; /* text color */
+}
+
+/* freeform tags */
+div:has(.commas) [class^="freeform"] a.tag,
+.tags .freeforms a[data-remote="true"] {
+  border-color: #3B6619;
+  background-color: #E3F5D5;
+  color: #111; /* text color */
+}
+
+/* below are the tags that only appear in the work meta box (e.g. inside works) */
+
+/* rating */
+.rating.tags a.tag {
+  border-color: #BF1960;
+  background-color: #FFD4E6;
+  color: #111; /* text color */
+}
+
+/* category (= type of pairing/relationship) */
+.category.tags a.tag {
+  border-color: #3A5485;
+  background-color: #D6DAF5;
+  color: #111; /* text color */
+}
+
+/* fandom */
+.fandom.tags a.tag {
+  border-color: #006699;
+  background-color: #DEFBFF;
+  color: #111; /* text color */
+}
+
+/*>========== colors for states (hover and focus) ==========<*/
+
+/* this changes the appearence of the tags when you hover your mouse over them or when they get focused */
+div:has(.commas) a.tag:is(:hover, :focus),
+.commas.tags a[data-remote="true"]:is(:hover, :focus) {
+  border-color: transparent;
+  background-color: #900;
+  color: #FFF; /* text color */
+}
