@@ -34,7 +34,7 @@ COLORS
 
 /*>========== Content warnings ==========<*/
 
-  --ctnw:    #D76D12;   /* Creator Chose Not To Use Archive Warnings */
+  --cntw:    #D76D12;   /* Creator Chose Not To Use Archive Warnings */
   --warn:    #B0021F;   /* Archive Warnings Apply */
   --ext:     #107CB9;   /* External Work */
 
@@ -115,7 +115,7 @@ LABELS
 
 /* Creator chose not to warn - color */
 .required-tags .warning-choosenotto {
-  background: var(--ctnw) !important;
+  background: var(--cntw) !important;
 }
 
 /* Creator chose not to warn - blurb label text */
