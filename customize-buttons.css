@@ -1,15 +1,21 @@
 /*============================================================
 
                         AO3 Site Skin:
-                     Customize the Buttons
-
-                        by ZerafinaCSS
+                    Customize the Buttons
 
 =============================================================*/
 
-.skin-credit {
-  content: "Customize the Buttons by ZerafinaCSS 
-  https://archiveofourown.org/works/76032096/chapters/211330756";
+.site-skin-metadata {
+  content: "==================================================
+
+  - Skin:         Customize the Buttons
+  - Author:       ZerafinaCSS [https://www.tumblr.com/zerafinacss]
+  - Instructions: https://archiveofourown.org/works/76032096/chapters/211330756
+  - Repository:   https://github.com/ZerafinaCSS/Site-Skin-Add-Ons
+  - License:      MIT
+  - Updated:      2026-Mar-07 23:47 UTC
+
+  ==========================================================";
 }
 
 /*>========== buttons ==========<*/

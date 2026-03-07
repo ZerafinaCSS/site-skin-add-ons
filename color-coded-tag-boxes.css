@@ -1,15 +1,21 @@
 /*============================================================
-                        
+
                         AO3 Site Skin:
                     Color-Coded Tag Boxes
 
-                        by ZerafinaCSS
-
 =============================================================*/
 
-.skin-credit {
-  content: "Color-Coded Tag Boxes by ZerafinaCSS
-  https://archiveofourown.org/works/76032096/chapters/199463046";
+.site-skin-metadata {
+  content: "==================================================
+
+  - Skin:         Color-Coded Tag Boxes
+  - Author:       ZerafinaCSS [https://www.tumblr.com/zerafinacss]
+  - Instructions: https://archiveofourown.org/works/76032096/chapters/199463046
+  - Repository:   https://github.com/ZerafinaCSS/Site-Skin-Add-Ons
+  - License:      MIT
+  - Updated:      2026-Mar-07 23:45 UTC
+
+  ==========================================================";
 }
 
 /*>========== reset some of the default tag styling ==========<*/
@@ -76,7 +82,7 @@ div:has(.commas) [class^="relationship"] a.tag {
   color: #111; /* text color */
 }
 
-/* relationships with "&" separator => nonsexual, non-romantic */
+/* relationships with "&" separator => non-sexual, non-romantic */
 div:has(.commas) [class^="relationship"] a.tag[href*="%20*a*%20"] {
   border-color: #994D00;
   background-color: #FFD9B2;
