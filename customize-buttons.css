@@ -10,10 +10,10 @@
 
   - Skin:         Customize the Buttons
   - Author:       ZerafinaCSS [https://www.tumblr.com/zerafinacss]
-  - Instructions: https://archiveofourown.org/works/76032096/chapters/211330756
+  - Instructions: https://ao3.org/works/76032096/chapters/211330756
   - Repository:   https://github.com/ZerafinaCSS/Site-Skin-Add-Ons
   - License:      MIT
-  - Updated:      2026-Mar-07 23:47 UTC
+  - Updated:      2026-Mar-08 13:22 UTC
 
   ==========================================================";
 }
@@ -50,11 +50,9 @@ button {
 
 /*>========== button subtypes and modes ==========<*/
 
-/*>>====== hovered + focused buttons =====<<*/
-
+/* hovered + focused buttons */
 /* hover = when you move the mouse over the button */
 /* focus = when you click or tap on the button or select it with the tab key */
-
 .action:is(:hover, :focus),
 .action a:is(:hover, :focus),
 .actions a:is(:hover, :focus),
@@ -73,10 +71,8 @@ button:is(:hover, :focus) {
   color: #900000; /* text color */
 }
 
-/*>>====== currently active/selected buttons =====<<*/
-
+/* currently active/selected buttons */
 /* example: the page you're currently on when browsing works */
-
 .actions a:active,
 .actions:not(#dashboard .actions) .current,
 a.current,

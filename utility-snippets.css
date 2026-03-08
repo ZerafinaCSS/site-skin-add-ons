@@ -2,11 +2,26 @@
 
                 AO3 SITE SKIN UTILITY ADD-ONS
 
-============================================================*/
+==============================================================
+
+Instructions: https://ao3.org/works/76032096/chapters/212387316
 
 
 /*============================================================
-Hide Specific Buttons
+DIRECTORY
+==============================================================
+
+>> 01 Hide Specific Buttons
+>> 02 Hide/Replace AO3 Header Elements
+>> 03 Hide Statistics
+>> 04 Hide Miscellaneous Elements
+>> 05 Display Download Button for Only One Format
+>> 06 Position Blurb Icons in a Row Under the Fandom Tags
+>> 07 Miscellaneous
+
+
+==============================================================
+>> 01 Hide Specific Buttons
 ============================================================*/
 
 /* hide "Delete" buttons on comments */
@@ -74,8 +89,9 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
+
 /*============================================================
-Hide/Replace AO3 Header Elements
+>> 02 Hide/Replace AO3 Header Elements
 ============================================================*/
 
 /* hide the AO3 logo */
@@ -83,7 +99,7 @@ Hide/Replace AO3 Header Elements
   display: none;
 }
 
-/* hide user icon in the header */
+/* hide the little user icon */
 #greeting p.icon {
   display: none;
 }
@@ -94,7 +110,7 @@ Hide/Replace AO3 Header Elements
   display: none;
 }
 
-/*========== replace "Archive of Our Own beta" heading ==========*/
+/*>========== replace "Archive of Our Own beta" heading ==========<*/
 
   /* hide "Archive of Our Own beta" */
   #header .heading a span,
@@ -103,16 +119,16 @@ Hide/Replace AO3 Header Elements
   }
 
   /* replacement */
-  #header .heading a:before {
-    content: "Insert replacement here"
+  #header .heading a::before {
+    content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
   }
 
-/*========== replace "Hi, [username]! ==========*/
+/*>========== replace "Hi, [username]! ==========<*/
 
   /* hide "Hi, [username]! */
   /* but in a way that keeps the functionality for the replacement */
   #header #greeting .dropdown > a[href*="/users/"] {
-    width: 1.4em;
+    width: 1.4em; /* adjust to width of replacement if necessary */
     overflow: hidden;
     color: transparent;
   }
@@ -124,8 +140,9 @@ Hide/Replace AO3 Header Elements
     content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
   }
 
+
 /*============================================================
-Hide Statistics
+>> 03 Hide Statistics
 ============================================================*/
 
 /* hide stats for comments, kudos, bookmarks and hits on all works */
@@ -149,8 +166,9 @@ li:has(> a[href*="/stats"]) {
   display: none;
 }
 
+
 /*============================================================
-Hide Miscellaneous Elements
+>> 04 Hide Miscellaneous Elements
 ============================================================*/
 
 /* hide the "You have muted some users" notice */
@@ -173,6 +191,12 @@ p.muted.notice {
   display: none;
 }
 
+/* hide only the kudos icon */
+p.kudos {
+  background: none;
+  padding: 0.5em;
+}
+
 /* hide "characters" tags in blurbs */
 .tags li.characters {
   display: none;
@@ -188,11 +212,13 @@ p.muted.notice {
   display: none;
 }
 
+
 /*============================================================
-Display Download Button for Only One Format
+>> 05 Display Download Button for Only One Format
 ============================================================*/
 
-/* replace the "epub" below with "azw3", "mobi", "pdf" or "html" to get the button for another format */
+/* this is for EPUB, but you can change it to another format (see below) */
+/* you need to copy and paste this whole section for it to work properly*/
 
 /* remove expandable menu */
 .javascript .work.navigation .download .secondary {
@@ -209,9 +235,10 @@ Display Download Button for Only One Format
   display: inline-block;
 }
 
-/* remove all the download buttons except for the EPUB one */ 
+/* remove all the download buttons except for the EPUB one */
+/* replace the "epub" between the quotation marks with "azw3", "mobi", "pdf" or "html" to get another format */
 .download > button,
-.javascript .work.navigation .secondary li:has(a:not([href*="epub"])) {
+.javascript .work.navigation .secondary li:has(a:not([href*="epub"])) { /* <- CHANGE FORMAT HERE */
   display: none;
 }
 
@@ -220,17 +247,19 @@ Display Download Button for Only One Format
   content: "\2913\00FE0F\00a0";
 }
 
+
 /*============================================================
-Position Blurb Icons in a Row Under the Work Title and the Fandom Tags
+>> 06 Position Blurb Icons in a Row Under the Fandom Tags
 ============================================================*/
+
+/* you need to copy and paste this whole section for it to work properly*/
 
 /* remove the space for the icons on the right side */
 .blurb:has(ul.required-tags) .header .heading {
   margin-left: 0;
 }
 
-/* the following part changes the position of the content icons */
-
+/* this changes the position of the content icons */
 .blurb .header ul.required-tags {
   position: unset;
   display: flex;
@@ -240,18 +269,20 @@ Position Blurb Icons in a Row Under the Work Title and the Fandom Tags
   margin-block: 0.375em;
 }
 
+/* more positioning */
 .blurb .header ul.required-tags li {
   position: unset;
 }
 
+
 /*============================================================
-Miscellaneous
+>> 07 Miscellaneous
 ============================================================*/
 
-/* add a heart to tags for romantic/sexual relationships (= e.g. tags that contain a slash) */
+/* add a heart to tags for romantic/sexual relationships (e.g. tags that contain a slash) */
 [class^="relationship"] a.tag[href*="*s*"]::before {
   content: "\002764\fe0e \00a0"; /* = unicode heart + variation selector + non-breaking space */
-}
+} /* you can replace the heart by replacing "\002764\fe0e \00a0" between the quotation marks with any text/emoji/symbol you want */
 
 /* work blurbs: display title, creator and gifteee in different lines */
 .blurb .header h4.heading a:first-of-type::after,
@@ -264,3 +295,17 @@ Miscellaneous
 img.icon[src$=".gif"] {
   filter: brightness(0) saturate(100%);
 }
+  /* --> add this if they should become visible again when you hover over/tap on them */
+  img.icon[src$=".gif"]:is(:hover, :active) {
+    filter: none;
+  }
+
+/* black out images in works */
+#workskin img {
+  filter: brightness(0) saturate(100%);
+}
+
+  /* --> add this if they should become visible again when you hover over/tap on them */
+  #workskin img:is(:hover, :active) {
+    filter: none;
+  }
