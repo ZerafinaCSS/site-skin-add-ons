@@ -99,6 +99,12 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
+/* replace the AO3 logo with a high res version */
+/* you can also replace the url between the quotation marks with your own, but the image must be hosted on an image sharing site */
+#header .logo {
+  content: url("/images/logo.png");
+}
+
 /* hide the little user icon */
 #greeting p.icon {
   display: none;
@@ -110,6 +116,11 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
+/* hide the search bar*/
+#header .search {
+  display: none;
+}
+
 /*>========== replace "Archive of Our Own beta" heading ==========<*/
 
   /* hide "Archive of Our Own beta" */
@@ -118,10 +129,10 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     display: none;
   }
 
-  /* replacement */
-  #header .heading a::before {
-    content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
-  }
+    /* --> replacement */
+    #header .heading a::before {
+      content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
+    }
 
 /*>========== replace "Hi, [username]! ==========<*/
 
@@ -133,12 +144,12 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     color: transparent;
   }
 
-  /* replacement */
-  #header #greeting .dropdown > a[href*="/users/"]::before {
-    display: block;
-    color: initial;
-    content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
-  }
+    /* --> replacement */
+    #header #greeting .dropdown > a[href*="/users/"]::before {
+      display: block;
+      color: initial;
+      content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
+    }
 
 
 /*============================================================
@@ -252,7 +263,7 @@ p.kudos {
 >> 06 Position Blurb Icons in a Row Under the Fandom Tags
 ============================================================*/
 
-/* you need to copy and paste this whole section for it to work properly*/
+/* you need to copy and paste this whole section for it to work properly */
 
 /* remove the space for the icons on the right side */
 .blurb:has(ul.required-tags) .header .heading {
@@ -289,6 +300,13 @@ p.kudos {
 .blurb .header h4.heading a[rel="author"]:has(+ a[href$="/gifts"])::after {
   content: "\A";
   white-space: pre;
+}
+
+/* make the whole site grayscale */
+/* warning: this will also affect all images */
+#outer,
+#modal {
+  filter: grayscale(100%);
 }
 
 /* black out gif icons */
