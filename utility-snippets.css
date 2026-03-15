@@ -7,7 +7,7 @@
 Instructions: https://ao3.org/works/76032096/chapters/212387316
 
 
-/*============================================================
+==============================================================
 DIRECTORY
 ==============================================================
 
@@ -44,8 +44,8 @@ DIRECTORY
   display: none;
 }
 
-/* hide "Clear History" button */
-li:has(a[href$="/readings/clear"]) {
+/* hide "Clear Entire History" button */
+li:has(a[href$="/readings/confirm_clear"]) {
   display: none;
 }
 
@@ -228,6 +228,7 @@ p.kudos {
 >> 05 Display Download Button for Only One Format
 ============================================================*/
 
+/* removes the "Download" button and dropdown menu inside of works, and shows just the download button for your preferred format instead /*
 /* this is for EPUB, but you can change it to another format (see below) */
 /* you need to copy and paste this whole section for it to work properly*/
 
@@ -263,7 +264,7 @@ p.kudos {
 >> 06 Position Blurb Icons in a Row Under the Fandom Tags
 ============================================================*/
 
-/* you need to copy and paste this whole section for it to work properly */
+/* you need to copy and paste this whole section for it to work properly */ 
 
 /* remove the space for the icons on the right side */
 .blurb:has(ul.required-tags) .header .heading {
@@ -291,11 +292,17 @@ p.kudos {
 ============================================================*/
 
 /* add a heart to tags for romantic/sexual relationships (e.g. tags that contain a slash) */
+/* you can replace the heart by replacing "\002764\fe0e \00a0" between the quotation marks with any text/emoji/symbol you want */
 [class^="relationship"] a.tag[href*="*s*"]::before {
   content: "\002764\fe0e \00a0"; /* = unicode heart + variation selector + non-breaking space */
-} /* you can replace the heart by replacing "\002764\fe0e \00a0" between the quotation marks with any text/emoji/symbol you want */
+}
 
-/* work blurbs: display title, creator and gifteee in different lines */
+/* change the gray background color of relationship tags in blurbs */
+li.relationships a {
+  background: #5998D6; /* this is Reversi blue, but you can change it to any color you want */
+}
+
+/* work blurbs: display title, creator and gifteee in separate lines */
 .blurb .header h4.heading a:first-of-type::after,
 .blurb .header h4.heading a[rel="author"]:has(+ a[href$="/gifts"])::after {
   content: "\A";
