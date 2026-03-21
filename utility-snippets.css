@@ -34,7 +34,7 @@ DIRECTORY
   display: none;
 }
 
-/* hide "Delete from History" button in "Is it later already?" module on AO3 homepage*/
+/* hide "Delete from History" button in "Is it later already?" module on AO3 homepage */
 .splash .reading .actions {
   display: none;
 }
@@ -110,47 +110,52 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
-/* hide the "Log Out" button */
-/* because why would you ever want to leave AO3? */
-#header #greeting a[href*="/users/logout"] {
+/* hide the "Post" button */
+/* because maybe you're a reader, not a writer */
+#header #greeting li:has(a[href*="/works/new"]) {
   display: none;
 }
 
-/* hide the search bar*/
+/* hide the "Log Out" button */
+/* because why would you ever want to leave AO3? */
+#header #greeting li:has(a[href*="/users/logout"]) {
+  display: none;
+}
+
+/* hide the search bar */
 #header .search {
   display: none;
 }
 
 /*>========== replace "Archive of Our Own beta" heading ==========<*/
 
-  /* hide "Archive of Our Own beta" */
-  #header .heading a span,
-  #header .heading a sup {
-    display: none;
-  }
+/* hide "Archive of Our Own beta" */
+#header .heading a span,
+#header .heading a sup {
+  display: none;
+}
 
-    /* --> replacement */
-    #header .heading a::before {
-      content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
-    }
+  /* --> replacement */
+  #header .heading a::before {
+    content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
+  }
 
 /*>========== replace "Hi, [username]! ==========<*/
 
-  /* hide "Hi, [username]! */
-  /* but in a way that keeps the functionality for the replacement */
-  #header #greeting .dropdown > a[href*="/users/"] {
-    width: 1.4em; /* adjust to width of replacement if necessary */
-    overflow: hidden;
-    color: transparent;
+/* hide "Hi, [username]! */
+/* but in a way that keeps the functionality for the replacement */
+#header #greeting .dropdown > a[href*="/users/"] {
+  width: 1.4em; /* adjust to width of replacement if necessary */
+  overflow: hidden;
+  color: transparent;
+}
+
+  /* --> replacement */
+  #header #greeting .dropdown > a[href*="/users/"]::before {
+    display: block;
+    color: initial;
+    content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
   }
-
-    /* --> replacement */
-    #header #greeting .dropdown > a[href*="/users/"]::before {
-      display: block;
-      color: initial;
-      content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
-    }
-
 
 /*============================================================
 >> 03 Hide Statistics
@@ -223,6 +228,13 @@ p.kudos {
   display: none;
 }
 
+/* hide non-English works */
+/* you can change this to another language by replacing the "en" language code */
+/* or add another languages you don't want to hide; example for English and French: [lang="en"], [lang="fr"] */
+/* here are all languages that are used on AO3: https://archiveofourown.org/languages */
+.work .blurb:not(:has([lang="en"])) {
+  display: none;
+}
 
 /*============================================================
 >> 05 Display Download Button for Only One Format
@@ -230,7 +242,7 @@ p.kudos {
 
 /* removes the "Download" button and dropdown menu inside of works, and shows just the download button for your preferred format instead /*
 /* this is for EPUB, but you can change it to another format (see below) */
-/* you need to copy and paste this whole section for it to work properly*/
+/* you need to copy and paste this whole section for it to work properly */
 
 /* remove expandable menu */
 .javascript .work.navigation .download .secondary {
