@@ -14,77 +14,78 @@ DIRECTORY
 >> 01 Hide Specific Buttons
 >> 02 Hide/Replace AO3 Header Elements
 >> 03 Hide Statistics
->> 04 Hide Miscellaneous Elements
->> 05 Display Download Button for Only One Format
->> 06 Position Blurb Icons in a Row Under the Fandom Tags
->> 07 Miscellaneous
+>> 04 Hide/Modify Specific Tags
+>> 05 Hide Miscellaneous Elements
+>> 06 Display Download Button for Only One Format
+>> 07 Position Blurb Icons in a Row Under the Fandom Tags
+>> 08 Miscellaneous
 
 
 ==============================================================
 >> 01 Hide Specific Buttons
 ============================================================*/
 
-/* hide "Delete" buttons on comments */
+/*===== hide "Delete" buttons on comments =====*/
 .thread li[id^="delete_comment_link"] {
   display: none;
 }
 
-/* hide "Block" buttons on comments */
+/*===== hide "Block" buttons on comments =====*/
 .thread li[id^="block_link"] {
   display: none;
 }
 
-/* hide "Delete from History" button in "Is it later already?" module on AO3 homepage */
+/*===== hide "Delete from History" button in "Is it later already?" module on AO3 homepage =====*/
 .splash .reading .actions {
   display: none;
 }
 
-/* hide "Delete" button in "Unread messages" module on AO3 homepage */
+/*===== hide "Delete" button in "Unread messages" module on AO3 homepage =====*/
 .splash .comment .actions li:has(input[value="Delete"]) {
   display: none;
 }
 
-/* hide "Clear Entire History" button */
+/*===== hide "Clear Entire History" button =====*/
 li:has(a[href$="/readings/confirm_clear"]) {
   display: none;
 }
 
-/* hide "Delete from History" button on "History" pages */
+/*===== hide "Delete from History" button on "History" pages =====*/
 .readings-index ul.actions:has(input[value="Delete from History"]) {
   display: none;
 }
 
-/* hide "RSS Feed" button */
+/*===== hide "RSS Feed" button =====*/
 li:has(a.rss) {
   display: none;
 }
 
-/* hide "Delete My Account" button */
+/*===== hide "Delete My Account" button =====*/
 li:has(a[data-confirm][data-method="delete"][href*="/users/"]) {
   display: none;
 }
 
-/* hide "Orphan Work" button */
+/*===== hide "Orphan Work" button =====*/
 li:has(a[href*="/orphans/new?work"]) {
   display: none;
 }
 
-/* hide "Delete Work" button */
+/*===== hide "Delete Work" button =====*/
 li:has(a[href*="/works"][data-method="delete"]) {
   display: none;
 }
 
-/* hide "Orphan Series" button */
+/*===== hide "Orphan Series" button =====*/
 li:has(a[href*="/orphans/new?series"]) {
   display: none;
 }
 
-/* hide "Delete Series" button */
+/*===== hide "Delete Series" button =====*/
 li:has(a[href*="/series"][data-method="delete"]) {
   display: none;
 }
 
-/* hide "Delete All Subscriptions" button */
+/*===== hide "Delete All Subscriptions" button =====*/
 li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
@@ -94,41 +95,40 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
 >> 02 Hide/Replace AO3 Header Elements
 ============================================================*/
 
-/* hide the AO3 logo */
+/*===== hide the AO3 logo =====*/
 #header .logo {
   display: none;
 }
 
-/* replace the AO3 logo with a high res version */
-/* you can also replace the url between the quotation marks with your own, but the image must be hosted on an image sharing site */
+/*===== replace the AO3 logo with a high res version =====*/
+/* you can also replace the url between the quotation marks with your own; the image must be hosted on an image sharing site */
 #header .logo {
   content: url("/images/logo.png");
 }
 
-/* hide the little user icon */
+/*===== hide the little user icon =====*/
 #greeting p.icon {
   display: none;
 }
 
-/* hide the "Post" button */
+/*===== hide the "Post" button =====*/
 /* because maybe you're a reader, not a writer */
 #header #greeting li:has(a[href*="/works/new"]) {
   display: none;
 }
 
-/* hide the "Log Out" button */
+/*===== hide the "Log Out" button =====*/
 /* because why would you ever want to leave AO3? */
 #header #greeting li:has(a[href*="/users/logout"]) {
   display: none;
 }
 
-/* hide the search bar */
+/*===== hide the search bar =====*/
 #header .search {
   display: none;
 }
 
-/*>========== replace "Archive of Our Own beta" heading ==========<*/
-
+/*==== replace "Archive of Our Own beta" heading =====*/
 /* hide "Archive of Our Own beta" */
 #header .heading a span,
 #header .heading a sup {
@@ -140,10 +140,8 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
   }
 
-/*>========== replace "Hi, [username]! ==========<*/
-
-/* hide "Hi, [username]! */
-/* but in a way that keeps the functionality for the replacement */
+/*===== replace "Hi, [username]! =====*/
+/* hide "Hi, [username]!, but in a way that keeps the functionality for the replacement */
 #header #greeting .dropdown > a[href*="/users/"] {
   width: 1.4em; /* adjust to width of replacement if necessary */
   overflow: hidden;
@@ -157,68 +155,100 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
   }
 
+
 /*============================================================
 >> 03 Hide Statistics
 ============================================================*/
 
-/* hide stats for comments, kudos, bookmarks and hits on all works */
+/*===== hide stats for comments, kudos, bookmarks and hits on all works =====*/
 .stats :is(.comments, .kudos, .bookmarks, .hits) {
   display: none;
 }
 
-/* hide stats for comments, kudos, bookmarks and hits only on your own work */
+/*===== hide stats for comments, kudos, bookmarks and hits only on your own work =====*/
 .own.blurb .stats :is(.comments, .kudos, .bookmarks, .hits),
 .series-show:has(.own.blurb) .series.meta .bookmarks {
   display: none;
 }
 
-/* hide the link to your statistics page */
+/*===== hide the link to your statistics page =====*/
 li:has(> a[href*="/stats"]) {
   display: none !important;
 }
 
-/* hide the content of your statistics page */
+/*===== hide the content of your statistics page =====*/
 .stats-index {
   display: none;
 }
 
 
 /*============================================================
->> 04 Hide Miscellaneous Elements
+>> 04 Hide/Modify Specific Tags
 ============================================================*/
 
-/* hide the "You have muted some users" notice */
+/*===== add a heart to tags for romantic/sexual relationships (e.g. tags that contain a slash) =====*/
+/* you can replace the heart by replacing "\002764\fe0e \00a0" between the quotation marks with any text/emoji/symbol you want */
+[class^="relationship"] a.tag[href*="*s*"]::before {
+  content: "\002764\fe0e \00a0"; /* = unicode heart + variation selector + non-breaking space */
+}
+
+/*===== change the gray background color of relationship tags in blurbs =====*/
+li.relationships a {
+  background: #5998D6; /* this is Reversi blue; you can change it to any color you want */
+}
+
+/*===== hide all character tags in blurbs =====*/
+/* you can modify this for other tag types (li.warnings, li.relationships, li.freeforms) */
+.tags li.characters {
+  display: none;
+}
+
+/*===== hide specific types of tags after a certain number =====*/
+/* lists 5 "li" items, which means the 5th and subsequent tags get hidden - the number can be adjusted */
+/* this is for relationship tags, but you can modify it for other tag types (li.characters, li.freeforms) */
+.blurb li.relationships + li.relationships + li.relationships + li.relationships + li.relationships {
+  display: none;
+}
+
+  /* --> optional: add suffix to last visible tag, to indicate that there are hidden tags */
+  /* has to be one "li" item less than the list above! */
+  .blurb li.relationships + li.relationships + li.relationships + li.relationships::after {
+    color: red; /* change text color here */
+    content: " [...]"; /* you can replace the text between the quotation marks with anything you want */
+  }
+
+
+/*============================================================
+>> 05 Hide Miscellaneous Elements
+============================================================*/
+
+/*===== hide the "You have muted some users" notice =====*/
 p.muted.notice {
   display: none;
 }
 
-/* hide list of users who have left kudos on works */
+/*===== hide list of users who have left kudos on works =====*/
 #feedback #kudos {
   display: none;
 }
 
-/* hide list of users who have left kudos on works, except on your works */
+/*===== hide list of users who have left kudos on works, except on your works =====*/
 #main:not(:has(.actions > .edit a[href$="/edit"])) #feedback #kudos {
   display: none;
 }
 
-/* hide list of users who have left kudos on your own works, but show them on other works */
+/*===== hide list of users who have left kudos on your own works, but show them on other works =====*/
 #main:has(.actions > .edit a[href$="/edit"]) #feedback #kudos {
   display: none;
 }
 
-/* hide only the kudos icon */
+/*===== hide only the kudos icon =====*/
 p.kudos {
   background: none;
   padding: 0.5em;
 }
 
-/* hide "characters" tags in blurbs */
-.tags li.characters {
-  display: none;
-}
-
-/* hide specific skins in footer */
+/*===== hide specific skins in footer =====*/
 /* delete the line of code for the ones you want to keep */
 #footer .menu li:has([action="/skins/unset"]), /* Default */
 #footer .menu li:has([action="/skins/891/set"]), /* Low Vision Default */
@@ -228,7 +258,7 @@ p.kudos {
   display: none;
 }
 
-/* hide non-English works */
+/*===== hide non-English works =====*/
 /* you can change this to another language by replacing the "en" language code */
 /* or add another languages you don't want to hide; example for English and French: [lang="en"], [lang="fr"] */
 /* here are all languages that are used on AO3: https://archiveofourown.org/languages */
@@ -236,8 +266,9 @@ p.kudos {
   display: none;
 }
 
+
 /*============================================================
->> 05 Display Download Button for Only One Format
+>> 06 Display Download Button for Only One Format
 ============================================================*/
 
 /* removes the "Download" button and dropdown menu inside of works, and shows just the download button for your preferred format instead /*
@@ -273,7 +304,7 @@ p.kudos {
 
 
 /*============================================================
->> 06 Position Blurb Icons in a Row Under the Fandom Tags
+>> 07 Position Blurb Icons in a Row Under the Fandom Tags
 ============================================================*/
 
 /* you need to copy and paste this whole section for it to work properly */ 
@@ -300,35 +331,24 @@ p.kudos {
 
 
 /*============================================================
->> 07 Miscellaneous
+>> 08 Miscellaneous
 ============================================================*/
 
-/* add a heart to tags for romantic/sexual relationships (e.g. tags that contain a slash) */
-/* you can replace the heart by replacing "\002764\fe0e \00a0" between the quotation marks with any text/emoji/symbol you want */
-[class^="relationship"] a.tag[href*="*s*"]::before {
-  content: "\002764\fe0e \00a0"; /* = unicode heart + variation selector + non-breaking space */
-}
-
-/* change the gray background color of relationship tags in blurbs */
-li.relationships a {
-  background: #5998D6; /* this is Reversi blue, but you can change it to any color you want */
-}
-
-/* work blurbs: display title, creator and gifteee in separate lines */
+/*===== work blurbs: display title, creator and gifteee in separate lines =====*/
 .blurb .header h4.heading a:first-of-type::after,
 .blurb .header h4.heading a[rel="author"]:has(+ a[href$="/gifts"])::after {
   content: "\A";
   white-space: pre;
 }
 
-/* make the whole site grayscale */
+/*===== make the whole site grayscale =====*/
 /* warning: this will also affect all images */
 #outer,
 #modal {
   filter: grayscale(100%);
 }
 
-/* black out gif icons */
+/*===== black out gif icons =====*/
 img.icon[src$=".gif"] {
   filter: brightness(0) saturate(100%);
 }
@@ -337,7 +357,7 @@ img.icon[src$=".gif"] {
     filter: none;
   }
 
-/* black out images in works */
+/*=====  black out images in works =====*/
 #workskin img {
   filter: brightness(0) saturate(100%);
 }
