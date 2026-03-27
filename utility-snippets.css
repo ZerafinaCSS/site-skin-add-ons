@@ -101,7 +101,8 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
 }
 
 /*===== replace the AO3 logo with a high res version =====*/
-/* you can also replace the url between the quotation marks with your own; the image must be hosted on an image sharing site */
+/* you can also replace the url between the quotation marks with your own */ 
+/* the image must be hosted on an image sharing site like Squidge Images */
 #header .logo {
   content: url("/images/logo.png");
 }
@@ -137,7 +138,7 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
 
   /* --> replacement */
   #header .heading a::before {
-    content: "Insert replacement here" /* put any text/emoji/symbol you want between the quotation marks */
+    content: "Replacement" /* put any text/emoji/symbol you want between the quotation marks */
   }
 
 /*===== replace "Hi, [username]! =====*/
@@ -258,9 +259,17 @@ p.kudos {
   display: none;
 }
 
-/*===== hide non-English works =====*/
-/* you can change this to another language by replacing the "en" language code */
-/* or add another languages you don't want to hide; example for English and French: [lang="en"], [lang="fr"] */
+/*===== hide all works in specified language(s) =====*/
+/* this is for hiding Russian works, but you can change it to another language by replacing the "ru" language code */
+/* you can hide more than one language; example for hiding Russian and French works: [lang="ru"], [lang="fr"] */
+/* here are all languages that are used on AO3: https://archiveofourown.org/languages */
+.work .blurb:has([lang="ru"]) {
+  display: none;
+}
+
+/*===== hide all works that are NOT in the specified language(s) =====*/
+/* this is for hiding all non-English works, but you can change it to another language by replacing the "en" language code */
+/* you can also add other languages; example for only showing English and French works: [lang="en"], [lang="fr"] */
 /* here are all languages that are used on AO3: https://archiveofourown.org/languages */
 .work .blurb:not(:has([lang="en"])) {
   display: none;
@@ -286,14 +295,14 @@ p.kudos {
 }
 
 /* fix positioning */
-.javascript .work.navigation .secondary a {
+.javascript .work.navigation .download .secondary a {
   display: inline-block;
 }
 
 /* remove all the download buttons except for the EPUB one */
 /* replace the "epub" between the quotation marks with "azw3", "mobi", "pdf" or "html" to get another format */
 .download > button,
-.javascript .work.navigation .secondary li:has(a:not([href*="epub"])) { /* <- CHANGE FORMAT HERE */
+.javascript .work.navigation .download .secondary li:has(a:not([href*="epub"])) { /* <- CHANGE FORMAT HERE */
   display: none;
 }
 
