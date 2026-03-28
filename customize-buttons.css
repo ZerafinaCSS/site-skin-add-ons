@@ -9,11 +9,11 @@
   content: "==================================================
 
   - Skin:         Customize the Buttons
-  - Author:       ZerafinaCSS [https://www.tumblr.com/zerafinacss]
+  - Author:       ZerafinaCSS [https://tumblr.com/zerafinacss]
   - Instructions: https://ao3.org/works/76032096/chapters/211330756
   - Repository:   https://github.com/ZerafinaCSS/Site-Skin-Add-Ons
   - License:      MIT
-  - Updated:      2026-Mar-08 13:22 UTC
+  - Updated:      2026-Mar-28 20:22 UTC
 
   ==========================================================";
 }
@@ -45,7 +45,6 @@ button {
   background-image: none; /* insert image url or code for gradient here */
   background-origin: border-box !important; /* make background images/gradients start from the corner of the border, NOT the corner of the padding edge */
   color: #FFFFFF; /* text color */
-  cursor: pointer;
 }
 
 /*>========== button subtypes and modes ==========<*/
