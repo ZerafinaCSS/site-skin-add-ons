@@ -141,6 +141,23 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     content: "Replacement" /* put any text/emoji/symbol you want between the quotation marks */
   }
 
+/*===== replace only the "beta" after "Archive of Our Own" =====*/
+
+/* hide "beta" */
+#header h1.heading a sup {
+  display: none;
+}
+
+  /* --> replacement */
+  #header h1.heading a span::after {
+    content: " omega"; /* insert replacement text between the quotation marks, but keep the space before it */
+    font-style: italic;
+    font-size: 0.583em;
+    line-height: 0;
+    white-space: nowrap;
+    vertical-align: super;
+  }
+
 /*===== replace "Hi, [username]! =====*/
 /* hide "Hi, [username]!, but in a way that keeps the functionality for the replacement */
 #header #greeting .dropdown > a[href*="/users/"] {
