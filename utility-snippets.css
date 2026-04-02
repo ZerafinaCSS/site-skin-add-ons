@@ -12,7 +12,7 @@ DIRECTORY
 ==============================================================
 
 >> 01 Hide Specific Buttons
->> 02 Hide/Replace AO3 Header Elements
+>> 02 Hide/Modify AO3 Header Elements
 >> 03 Hide Statistics
 >> 04 Hide/Modify Specific Tags
 >> 05 Hide Miscellaneous Elements
@@ -92,7 +92,7 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
 
 
 /*============================================================
->> 02 Hide/Replace AO3 Header Elements
+>> 02 Hide/Modify AO3 Header Elements
 ============================================================*/
 
 /*===== hide the AO3 logo =====*/
@@ -100,9 +100,9 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
-/*===== replace the AO3 logo with a high res version =====*/
-/* you can also replace the url between the quotation marks with your own */ 
-/* the image must be hosted on an image sharing site like Squidge Images */
+/*===== replace the AO3 logo =====*/
+/* this replaces it with a high res version */ 
+/* you can add your own image by replacing the url between the quotation marks, but the image must be hosted on an image sharing site like Squidge Images */
 #header .logo {
   content: url("/images/logo.png");
 }
@@ -129,10 +129,19 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
-/*==== replace "Archive of Our Own beta" heading =====*/
+/*===== add back the small superscript text after "Archive of Our Own" =====*/
+/* it used to be "beta" */
+#header .heading a span::after {
+  content: " omega"; /* insert whatever you like between the quotation marks, but leave the space before it */
+  font-style: italic;
+  font-size: 0.583em;
+  line-height: 0;
+  vertical-align: super;
+}
+
+/*==== replace "Archive of Our Own" heading =====*/
 /* hide "Archive of Our Own beta" */
-#header .heading a span,
-#header .heading a sup {
+#header .heading a span {
   display: none;
 }
 
@@ -141,36 +150,20 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
     content: "Replacement" /* put any text/emoji/symbol you want between the quotation marks */
   }
 
-/*===== replace only the "beta" after "Archive of Our Own" =====*/
-
-/* hide "beta" */
-#header h1.heading a sup {
-  display: none;
-}
-
-  /* --> replacement */
-  #header h1.heading a span::after {
-    content: " omega"; /* insert replacement text between the quotation marks, but keep the space before it */
-    font-style: italic;
-    font-size: 0.583em;
-    line-height: 0;
-    white-space: nowrap;
-    vertical-align: super;
-  }
-
 /*===== replace "Hi, [username]! =====*/
-/* hide "Hi, [username]!, but in a way that keeps the functionality for the replacement */
+/* hide "Hi, [username]!, but in a way that keeps the functionality and colors for the replacement */
 #header #greeting .dropdown > a[href*="/users/"] {
-  width: 1.4em; /* adjust to width of replacement if necessary */
+  text-indent: -9999px;
   overflow: hidden;
-  color: transparent;
 }
 
   /* --> replacement */
-  #header #greeting .dropdown > a[href*="/users/"]::before {
+  #header #greeting .dropdown > a[href*="/users/"]::after {
     display: block;
-    color: initial;
-    content: "🌠"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
+    line-height: 1.286;
+    text-indent: 0;
+    content: "User Menu"; /* put any text/emoji/symbol you want between the quotation marks; adjust width above if necessary */
+    transform: translateY(-1.286em);
   }
 
 
