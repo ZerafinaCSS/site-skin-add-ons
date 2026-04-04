@@ -132,11 +132,12 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
 /*===== add back the small superscript text after "Archive of Our Own" =====*/
 /* it used to be "beta" */
 #header .heading a span::after {
-  content: " omega"; /* insert whatever you like between the quotation marks, but leave the space before it */
+  margin-left: 0.25em;
   font-style: italic;
   font-size: 0.583em;
   line-height: 0;
   vertical-align: super;
+  content: "omega"; /* put any text/emoji/symbol you want between the quotation marks */
 }
 
 /*==== replace "Archive of Our Own" heading =====*/
