@@ -36,7 +36,7 @@ DIRECTORY
 }
 
 /*===== hide "Delete from History" button in "Is it later already?" module on AO3 homepage =====*/
-.splash .reading .actions {
+.splash .reading .actions li:has([value="Delete from History"]) {
   display: none;
 }
 
