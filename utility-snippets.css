@@ -90,6 +90,11 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
+/*===== hide "Add To Collection" button on bookmarks =====*/
+.bookmark li#add_collection_link {
+  display: none;
+}
+
 
 /*============================================================
 >> 02 Hide/Modify AO3 Header Elements
@@ -204,7 +209,22 @@ li:has(> a[href*="/stats"]) {
   content: "\002764\fe0e \00a0"; /* = unicode heart + variation selector + non-breaking space */
 }
 
-/*===== change the gray background color of relationship tags in blurbs =====*/
+/*===== replace content of platonic relationship tags (e.g. tags that contain an "&") with a placeholder =====*/
+/* still shows the full tag when you hover or right-click it, which does not work well on mobile though */
+.tags li.relationships a.tag[href*="%20*a*%20"]:not(:hover, :focus) {
+  display: inline-block;
+  width: 1.35em; /* adjust if necessary -> needs to fit placeholder content (see below) */
+  height: 1.5em; /* adjust if necessary -> needs to be same value as tag line-height */
+  overflow: hidden;
+  vertical-align: first;
+}
+
+  /* --> add placeholder */
+  .tags li.relationships a.tag[href*="%20*a*%20"]:not(:hover, :focus)::before {
+    content: "[&] "; /* you can replace the symbols between the quotation marks with anything you want */
+  }
+
+/*===== change the background color of relationship tags in blurbs =====*/
 li.relationships a {
   background: #5998D6; /* this is Reversi blue; you can change it to any color you want */
 }
