@@ -95,6 +95,11 @@ li:has(a[href*="/subscriptions/confirm_delete_all"]) {
   display: none;
 }
 
+/*===== hide "Refuse Gift" button =====*/
+.gift p:has(a[href*="/toggle_rejected"]) {
+  display: none;
+}
+
 
 /*============================================================
 >> 02 Hide/Modify AO3 Header Elements
