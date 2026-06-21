@@ -299,7 +299,7 @@ p.kudos {
 /* this is for hiding Russian works, but you can change it to another language by replacing the "ru" language code */
 /* you can hide more than one language; example for hiding Russian and French works: [lang="ru"], [lang="fr"] */
 /* here are all languages that are used on AO3: https://archiveofourown.org/languages */
-.work .blurb:has([lang="ru"]) {
+.blurb[class*="group work"]:has([lang="ru"]) {
   display: none;
 }
 
@@ -307,7 +307,7 @@ p.kudos {
 /* this is for hiding all non-English works, but you can change it to another language by replacing the "en" language code */
 /* you can also add other languages; example for only showing English and French works: [lang="en"], [lang="fr"] */
 /* here are all languages that are used on AO3: https://archiveofourown.org/languages */
-.work .blurb:not(:has([lang="en"])) {
+.blurb[class*="group work"]:not(:has([lang="en"])) {
   display: none;
 }
 
