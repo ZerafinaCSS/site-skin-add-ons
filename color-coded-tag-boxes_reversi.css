@@ -1,14 +1,14 @@
 /*============================================================
 
                         AO3 Site Skin:
-                    Color-Coded Tag Boxes
+               Color-Coded Tag Boxes (Reversi)
 
 =============================================================*/
 
 .site-skin-metadata {
   content: "==================================================
 
-  - Skin:         Color-Coded Tag Boxes
+  - Skin:         Color-Coded Tag Boxes - Reversi Version
   - Author:       ZerafinaCSS [https://tumblr.com/zerafinacss]
   - Instructions: https://ao3.org/works/76032096/chapters/199463046
   - Repository:   https://github.com/ZerafinaCSS/Site-Skin-Add-Ons
@@ -56,10 +56,10 @@
   display: inline-block;
   margin-block: 2.5px; /* gap between tag rows; needs to be done with margin because row-gap is not allowed on AO3 (as of December 2025) */
   padding: 0.1em 0.5em; /* inner space for tag boxes */
-  border: 1px solid #666; /* change border-width, style and color here; replace this line with "border: none" or delete it to remove the borders */
-  border-radius: 12px; /* rounded corners; change value to "0" to remove them */
-  background-color: #DDD;
-  color: #111; /* text color */
+  border: 1px solid #DDDDDDBF; /* change border-width, style and color here; replace this line with "border: none" or delete it to remove the borders */
+  border-radius: 0; /* replace "0" with a value like "12px" for rounded corners */
+  background-color: #1111111A;
+  color: #DDDDDD; /* text color */
 }
 
 /*>========== colors for individual tag types ==========<*/
@@ -70,61 +70,61 @@
 /* warnings */
 div:has(.commas) [class^="warning"] a.tag,
 .tags .warnings a[data-remote="true"] {
-  border-color: #900;
-  background-color: #F5D5D5;
-  color: #111; /* text color */
+  border-color: #F5D5D5BF;
+  background-color: #9900001A;
+  color: #F5D5D5; /* text color */
 }
 
 /* relationships */
 div:has(.commas) [class^="relationship"] a.tag {
-  border-color: #994D00;
-  background-color: #FFD9B2;
-  color: #111; /* text color */
+  border-color: #FFD9B2BF;
+  background-color: #994D001A;
+  color: #FFD9B2; /* text color */
 }
 
 /* relationships with "&" separator => non-sexual, non-romantic */
 div:has(.commas) [class^="relationship"] a.tag[href*="%20*a*%20"] {
-  border-color: #994D00;
-  background-color: #FFD9B2;
-  color: #111; /* text color */
+  border-color: #FFD9B2BF;
+  background-color: #994D001A;
+  color: #FFD9B2; /* text color */
 }
 
 /* characters */
 div:has(.commas) [class^="character"] a.tag {
-  border-color: #998500;
-  background-color: #FFF4AB;
-  color: #111; /* text color */
+  border-color: #FFF4ABBF;
+  background-color: #9985001A;
+  color: #FFF4AB; /* text color */
 }
 
 /* freeform tags */
 div:has(.commas) [class^="freeform"] a.tag,
 .tags .freeforms a[data-remote="true"] {
-  border-color: #3B6619;
-  background-color: #E3F5D5;
-  color: #111; /* text color */
+  border-color: #E3F5D5BF;
+  background-color: #3B66191A;
+  color: #E3F5D5; /* text color */
 }
 
 /* below are the tags that only appear in the work meta box (e.g. inside works) */
 
 /* rating */
 .rating.tags a.tag {
-  border-color: #BF1960;
-  background-color: #FFD4E6;
-  color: #111; /* text color */
+  border-color: #FFD4E6BF;
+  background-color: #BF19601A;
+  color: #FFD4E6; /* text color */
 }
 
 /* category (= type of pairing/relationship) */
 .category.tags a.tag {
-  border-color: #3A5485;
-  background-color: #D6DAF5;
-  color: #111; /* text color */
+  border-color: #D6DAF5BF;
+  background-color: #3A54851A;
+  color: #D6DAF5; /* text color */
 }
 
 /* fandom */
 .fandom.tags a.tag {
-  border-color: #006699;
-  background-color: #DEFBFF;
-  color: #111; /* text color */
+  border-color: #DEFBFFBF;
+  background-color: #0066991A;
+  color: #DEFBFF; /* text color */
 }
 
 /*>========== colors for states (hover and focus) ==========<*/
@@ -134,6 +134,6 @@ div:has(.commas) a.tag:is(:hover, :focus),
 div:has(.commas) a.tag[href*="*"]:is(:hover, :focus),
 .commas.tags a[data-remote="true"]:is(:hover, :focus) {
   border-color: transparent;
-  background-color: #900;
-  color: #FFF; /* text color */
+  background-color: #5998D6;
+  color: #111111; /* text color */
 }
